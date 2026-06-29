@@ -1,0 +1,7 @@
+node_modules/
+.vite-cache/
+.pnpm-store/
+dist/
+*.log
+*.pid
+.DS_Store
