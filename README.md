@@ -1,4 +1,4 @@
-# phyicsforge - Alternating Current Visual Notes
+# physicsforge - Alternating Current Visual Notes
 
 A premium-style, zero-cost visual notes website for **NCERT Class 12 Physics Chapter 7: Alternating Current**.
 
@@ -80,7 +80,7 @@ pnpm preview
 4. If deploying manually to a repository path, set the base path:
 
 ```bash
-VITE_BASE_PATH=/phyicsforge/ pnpm build
+VITE_BASE_PATH=/physicsforge/ pnpm build
 ```
 
 5. This project also includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds and deploys to GitHub Pages automatically on pushes to `main`.

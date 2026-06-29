@@ -1,4 +1,4 @@
-name: Deploy phyicsforge to GitHub Pages
+name: Deploy physicsforge to GitHub Pages
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
       - name: Build
         run: pnpm build
         env:
-          VITE_BASE_PATH: /phyicsforge/
+          VITE_BASE_PATH: /physicsforge/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
