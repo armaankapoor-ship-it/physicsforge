@@ -7,12 +7,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: gh-pages
   cancel-in-progress: false
 
 jobs:
@@ -21,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -38,15 +38,16 @@ jobs:
         env:
           VITE_BASE_PATH: /physicsforge/
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Publish to gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages:refs/remotes/origin/gh-pages --depth=1
+          git worktree add gh-pages-worktree origin/gh-pages
+          find gh-pages-worktree -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -R dist/. gh-pages-worktree/
+          touch gh-pages-worktree/.nojekyll
+          cd gh-pages-worktree
+          git add -A
+          git commit -m "Deploy physicsforge site" || exit 0
+          git push origin HEAD:gh-pages

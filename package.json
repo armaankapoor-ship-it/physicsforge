@@ -1,5 +1,5 @@
 {
-  "name": "ac-visual-physics",
+  "name": "physicsforge",
   "private": true,
   "version": "1.0.0",
   "packageManager": "pnpm@11.7.0",
@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "generate:questions": "node scripts/generateQuestionBank.mjs",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "vite build --base=/physicsforge/ && gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "@vitejs/plugin-react": "6.0.2",

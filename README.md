@@ -74,7 +74,7 @@ pnpm preview
 
 ### GitHub Pages
 
-1. Create a GitHub repository named `phyicsforge`.
+1. Create a GitHub repository named `physicsforge`.
 2. Push this project to the repository.
 3. Install dependencies with `pnpm install`.
 4. If deploying manually to a repository path, set the base path:
@@ -83,7 +83,7 @@ pnpm preview
 VITE_BASE_PATH=/physicsforge/ pnpm build
 ```
 
-5. This project also includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds and deploys to GitHub Pages automatically on pushes to `main`.
+5. This project also includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds and publishes the `dist` folder to the `gh-pages` branch automatically on pushes to `main`.
 
 ```bash
 pnpm deploy
