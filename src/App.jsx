@@ -11,6 +11,7 @@ import RevisionDashboard from './components/RevisionDashboard'
 import Simulations from './components/Simulations'
 import SolvedExamples from './components/SolvedExamples'
 import VisualBanks from './components/VisualBanks'
+import ThreeDLab from './components/ThreeDLab'
 
 const navItems = [
   ['home', 'Home'],
@@ -19,6 +20,7 @@ const navItems = [
   ['formula-sheet', 'Formula'],
   ['derivations', 'Derive'],
   ['visual-bank', 'Visuals'],
+  ['models-3d', '3D Lab'],
   ['simulations', 'Sim'],
   ['solved-examples', 'Solved'],
   ['practice', 'Practice'],
@@ -89,6 +91,7 @@ export default function App() {
         <FormulaSheet />
         <DerivationBank />
         <VisualBanks />
+        <ThreeDLab />
         <Simulations />
         <SolvedExamples />
         <PracticeZone />
